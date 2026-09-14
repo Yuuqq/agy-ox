@@ -1,19 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="196" height="56" viewBox="0 0 196 56" role="img" aria-label="agy-ox">
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="112" viewBox="0 0 420 112" role="img" aria-label="agy-ox">
   <title>agy-ox</title>
   <style>
     .word { fill: #111827; }
+    .tagline { fill: #64748B; }
     .mark { fill: #111827; }
     @media (prefers-color-scheme: dark) {
       .word { fill: #F8FAFC; }
+      .tagline { fill: #94A3B8; }
       .mark { fill: #020617; }
     }
   </style>
-  <rect class="mark" width="56" height="56" rx="14"/>
-  <path fill="#E8A317" d="M12 18c-5-9 1-14 8-10 3 4 5 8 5 11H12zm32 0c5-9-1-14-8-10-3 4-5 8-5 11h13z"/>
-  <ellipse cx="28" cy="32" rx="16" ry="13" fill="#F8FAFC"/>
-  <ellipse cx="28" cy="38" rx="8" ry="6" fill="#E5E7EB"/>
-  <circle cx="22" cy="30" r="2.4" fill="#111827"/>
-  <circle cx="34" cy="30" r="2.4" fill="#111827"/>
-  <rect x="16" y="46" width="24" height="6" rx="3" fill="#0D9488"/>
-  <text x="68" y="28" dominant-baseline="central" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="32" font-weight="700" letter-spacing="-0.04em" class="word">agy-ox</text>
+  <rect class="mark" x="4" y="4" width="104" height="104" rx="24"/>
+  <path fill="#E8A317" d="M24 37C12 17 24 8 41 20c6 7 9 13 9 20H24zm64 0c12-20 0-29-17-17-6 7-9 13-9 20h26z"/>
+  <ellipse cx="56" cy="61" rx="31" ry="26" fill="#F8FAFC"/>
+  <ellipse cx="56" cy="75" rx="16" ry="12" fill="#E5E7EB"/>
+  <circle cx="44" cy="58" r="4" fill="#111827"/>
+  <circle cx="68" cy="58" r="4" fill="#111827"/>
+  <circle cx="50" cy="75" r="2.5" fill="#64748B"/>
+  <circle cx="62" cy="75" r="2.5" fill="#64748B"/>
+  <rect x="34" y="91" width="44" height="10" rx="5" fill="#0D9488"/>
+  <text x="132" y="58" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="58" font-weight="750" letter-spacing="-0.05em" class="word">agy-ox</text>
+  <text x="135" y="88" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="16" font-weight="500" letter-spacing="0.12em" class="tagline">ZCODE × ANTIGRAVITY</text>
 </svg>

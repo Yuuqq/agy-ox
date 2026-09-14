@@ -1,8 +1,7 @@
-<p align="center"><img src="assets/logo.svg" width="196" height="56" alt="agy-ox"></p>
+<p align="center"><img src="assets/logo.svg" width="420" alt="agy-ox — ZCode × Antigravity"></p>
 
 <p align="center">
-  <a href="README.md">English</a> ·
-  <a href="README.zh-CN.md">简体中文</a>
+  把本机 Google Antigravity CLI 雇成 ZCode 的 headless 工人。
 </p>
 
 <p align="center">
@@ -11,9 +10,7 @@
   <a href="LICENSE"><img src="assets/badges/license-mit.svg" alt="license MIT"></a>
 </p>
 
-# agy-ox
-
-把本机 [Google Antigravity CLI](https://antigravity.google/docs/cli/using/)（`agy`）雇成 **ZCode** 的 headless 工人。
+<p align="center"><a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a></p>
 
 Marketplace、插件、Skill、斜杠命令全部叫 **agy-ox**。
 

@@ -1,8 +1,7 @@
-<p align="center"><img src="assets/logo.svg" width="196" height="56" alt="agy-ox"></p>
+<p align="center"><img src="assets/logo.svg" width="420" alt="agy-ox — ZCode × Antigravity"></p>
 
 <p align="center">
-  <a href="README.md">English</a> ·
-  <a href="README.zh-CN.md">简体中文</a>
+  Hire the local Google Antigravity CLI as a headless worker for ZCode.
 </p>
 
 <p align="center">
@@ -11,9 +10,7 @@
   <a href="LICENSE"><img src="assets/badges/license-mit.svg" alt="license MIT"></a>
 </p>
 
-# agy-ox
-
-Hire the local [Google Antigravity CLI](https://antigravity.google/docs/cli/using/) (`agy`) as a **ZCode** headless worker.
+<p align="center"><a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a></p>
 
 Marketplace, plugin, skill, and slash command are all named **agy-ox**.
 
