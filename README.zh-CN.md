@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/logo.svg" width="280" alt="agy-ox"></p>
+<p align="center"><img src="assets/logo.svg" width="196" height="56" alt="agy-ox"></p>
 
 <p align="center">
   <a href="README.md">English</a> ·

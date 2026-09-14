@@ -1,11 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="88" viewBox="0 0 520 88" role="img" aria-label="agy-ox">
+<svg xmlns="http://www.w3.org/2000/svg" width="196" height="56" viewBox="0 0 196 56" role="img" aria-label="agy-ox">
   <title>agy-ox</title>
-  <rect width="520" height="88" fill="none"/>
-  <rect x="8" y="10" width="68" height="68" rx="16" fill="#111827"/>
-  <path fill="#F8FAFC" d="M22 48c0-10 8-18 20-18s20 8 20 18v8H22v-8z"/>
-  <path fill="#E8A317" d="M24 32c-6-10-2-16 6-14 4 6 6 10 6 14H24zm36 0c6-10 2-16-6-14-4 6-6 10-6 14h12z"/>
-  <circle cx="36" cy="48" r="3" fill="#111827"/>
-  <circle cx="48" cy="48" r="3" fill="#111827"/>
-  <rect x="28" y="62" width="28" height="8" rx="4" fill="#0D9488"/>
-  <text x="92" y="58" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="42" font-weight="700" fill="#111827">agy-ox</text>
+  <style>
+    .word { fill: #111827; }
+    .mark { fill: #111827; }
+    @media (prefers-color-scheme: dark) {
+      .word { fill: #F8FAFC; }
+      .mark { fill: #020617; }
+    }
+  </style>
+  <rect class="mark" width="56" height="56" rx="14"/>
+  <path fill="#E8A317" d="M12 18c-5-9 1-14 8-10 3 4 5 8 5 11H12zm32 0c5-9-1-14-8-10-3 4-5 8-5 11h13z"/>
+  <ellipse cx="28" cy="32" rx="16" ry="13" fill="#F8FAFC"/>
+  <ellipse cx="28" cy="38" rx="8" ry="6" fill="#E5E7EB"/>
+  <circle cx="22" cy="30" r="2.4" fill="#111827"/>
+  <circle cx="34" cy="30" r="2.4" fill="#111827"/>
+  <rect x="16" y="46" width="24" height="6" rx="3" fill="#0D9488"/>
+  <text x="68" y="28" dominant-baseline="central" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="32" font-weight="700" letter-spacing="-0.04em" class="word">agy-ox</text>
 </svg>
