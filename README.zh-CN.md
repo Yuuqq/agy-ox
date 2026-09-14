@@ -82,6 +82,21 @@ Yuuqq/agy-ox
 
 默认**不会**加 `--dangerously-skip-permissions`。`accept-edits` 不会自动放行 `run_command`，shell 仍走 [Permissions](https://antigravity.google/docs/cli/permissions/)。
 
+headless **soft-deny**（退出码 `0`，stderr 点名被拦的工具）时，加一条收窄的 `permissions.allow`，不要跳过权限。短参考：[`permissions-allow.md`](plugins/agy-ox/skills/agy-ox/permissions-allow.md)。
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "command(git)",
+      "command(npm test)"
+    ]
+  }
+}
+```
+
+写入 `~/.gemini/antigravity-cli/settings.json`（Windows 是 `%USERPROFILE%\.gemini\antigravity-cli\settings.json`），再重跑。Windows 上如果 `command(git)` 盖不住子命令，改用 `command(regex:git .*)`。
+
 在 Windows 上，长任务会先写入临时文件再整段交给 `-p`，避免 PowerShell 把任务正文拆成额外参数。Skill 里写了 bash / PowerShell / cmd 模板。
 
 Skill 依据的官方文档：
@@ -115,7 +130,9 @@ agy --version
     │   ├── agy-ox-ask.md        # /agy-ox-ask
     │   ├── agy-ox-continue.md   # /agy-ox-continue
     │   └── agy-ox-doctor.md     # /agy-ox-doctor
-    └── skills/agy-ox/SKILL.md   # $agy-ox
+    └── skills/agy-ox/
+        ├── SKILL.md             # $agy-ox
+        └── permissions-allow.md # soft-deny 之后
 ```
 
 插件里的 Skill 必须是扁平的 `skills/<name>/SKILL.md`，不能再套一层分组目录。

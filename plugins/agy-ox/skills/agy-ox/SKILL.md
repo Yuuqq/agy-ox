@@ -101,14 +101,24 @@ Official split:
 
 In headless mode there is no approval prompt. A tool that would have asked is **soft-denied**: the process may still exit `0`, with a notice on stderr naming the tool and how to allow it.
 
-Workspace file read/write is auto-allowed. Shell commands default to Ask, so they are soft-denied unless already allowed in `~/.gemini/antigravity-cli/settings.json`.
+Workspace file read/write is auto-allowed. Shell commands default to Ask, so they are soft-denied unless already allowed in `~/.gemini/antigravity-cli/settings.json`. `--mode accept-edits` does **not** auto-approve `run_command`.
 
-`--mode accept-edits` does **not** auto-approve `run_command`. If an implement/fix run is blocked on shell tools, report the stderr notice and ask whether to:
+On soft-deny: quote stderr, then follow `permissions-allow.md` in this skill folder. Prefer a scoped `permissions.allow` rule. **Never default `--dangerously-skip-permissions`.** Offer that flag only if the user explicitly asks after seeing the scoped option.
 
-1. add a scoped `permissions.allow` rule, or
-2. rerun with `--dangerously-skip-permissions` after explicit user approval
+Typical first rules:
 
-Prefer scoped allow rules. See https://antigravity.google/docs/cli/headless/ and https://antigravity.google/docs/cli/permissions/.
+```json
+{
+  "permissions": {
+    "allow": [
+      "command(git)",
+      "command(npm test)"
+    ]
+  }
+}
+```
+
+Docs: https://antigravity.google/docs/cli/headless/ and https://antigravity.google/docs/cli/permissions/.
 
 ## Collect the result
 

@@ -82,6 +82,21 @@ Then in chat:
 
 `--dangerously-skip-permissions` is **not** on by default. `accept-edits` does not auto-approve `run_command`; shell tools still follow [Permissions](https://antigravity.google/docs/cli/permissions/).
 
+On a headless **soft-deny** (exit `0`, stderr names the tool), add a scoped `permissions.allow` rule. Do not skip permissions. Short reference: [`permissions-allow.md`](plugins/agy-ox/skills/agy-ox/permissions-allow.md).
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "command(git)",
+      "command(npm test)"
+    ]
+  }
+}
+```
+
+Write that into `~/.gemini/antigravity-cli/settings.json` (Windows: `%USERPROFILE%\.gemini\antigravity-cli\settings.json`), then rerun. On Windows, use `command(regex:git .*)` when `command(git)` does not cover subcommands.
+
 On Windows, long prompts go through a temp file before `-p` so PowerShell quoting cannot split flags out of the task. The Skill has bash, PowerShell, and cmd templates.
 
 Docs used by the Skill:
@@ -115,7 +130,9 @@ If the binary is missing, follow [Installation & Auth](https://antigravity.googl
     │   ├── agy-ox-ask.md        # /agy-ox-ask
     │   ├── agy-ox-continue.md   # /agy-ox-continue
     │   └── agy-ox-doctor.md     # /agy-ox-doctor
-    └── skills/agy-ox/SKILL.md   # $agy-ox
+    └── skills/agy-ox/
+        ├── SKILL.md             # $agy-ox
+        └── permissions-allow.md # after a soft-deny
 ```
 
 Skills inside a plugin must stay in this flat `skills/<name>/SKILL.md` layout.

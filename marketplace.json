@@ -5,7 +5,7 @@
     {
       "name": "agy-ox",
       "source": "./plugins/agy-ox",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "description": "Delegate research, review, and implementation to the local agy CLI using official headless mode.",
       "category": "developer-tools",
       "tags": ["agy", "antigravity", "gemini", "headless", "subagent"],
