@@ -5,14 +5,16 @@
     {
       "name": "agy-ox",
       "source": "./plugins/agy-ox",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "description": "Delegate research, review, and implementation to the local agy CLI using official headless mode.",
       "category": "developer-tools",
       "tags": ["agy", "antigravity", "gemini", "headless", "subagent"],
       "examplePrompts": [
-        "Use agy-ox to review the current working-tree diff",
-        "Have agy-ox implement this scoped fix",
-        "Ask agy-ox to research how authentication works in this repo"
+        "/agy-ox-plan review the current working-tree diff",
+        "/agy-ox-fix implement this scoped retry fix",
+        "/agy-ox-ask what does this repo's auth flow do?",
+        "/agy-ox-continue apply the plan you just wrote",
+        "/agy-ox-doctor"
       ]
     }
   ]

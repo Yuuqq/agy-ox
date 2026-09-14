@@ -12,9 +12,9 @@
 
 <p align="center"><a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a></p>
 
-Marketplace, plugin, skill, and slash command are all named **agy-ox**.
+Marketplace, plugin, and Skill are named **agy-ox**. Slash commands hang off that same Skill.
 
-ZCode loads one Skill and one command. The Agent then runs official `agy -p` print mode. There is no companion process, job queue, or persona stack.
+ZCode loads one Skill plus several commands. The Agent then runs official `agy -p` print mode. There is no companion process, job queue, or persona stack.
 
 ![ZCode chat calls $agy-ox, which runs official agy -p, then checks JSON](assets/flow.svg)
 
@@ -40,14 +40,26 @@ Yuuqq/agy-ox
 Then in chat:
 
 ```text
-$agy-ox review the current working-tree diff
+/agy-ox-plan review the current working-tree diff
 ```
 
 ```text
-/agy-ox implement the retry fix we just discussed
+/agy-ox-fix implement the retry fix we just discussed
 ```
 
-Typing `/` also lists the Skill under the Skills group.
+```text
+/agy-ox-ask what does the auth flow do?
+```
+
+```text
+/agy-ox-continue apply that plan
+```
+
+```text
+/agy-ox-doctor
+```
+
+`$agy-ox` and `/agy-ox` still work as a general entry that infers `plan` vs `accept-edits`. Typing `/` also lists the Skill under the Skills group.
 
 ### Local folder (no GitHub)
 
@@ -57,14 +69,20 @@ Typing `/` also lists the Skill under the Skills group.
 
 ![plan for read-only work, accept-edits for file writes](assets/modes.svg)
 
-| User intent | Official flag | Notes |
+| Command | Official flags | Notes |
 | --- | --- | --- |
-| Research, review, explain, plan | `--mode plan` | Read-only investigation |
-| Implement / fix / edit files | `--mode accept-edits` | Auto-approves workspace file writes |
+| `/agy-ox-plan` | `--mode plan` | Read-only research or review |
+| `/agy-ox-fix` | `--mode accept-edits` | Auto-approves workspace file writes |
+| `/agy-ox-ask` | `--mode plan --effort low` | Short question, 2m timeout |
+| `/agy-ox-continue` | `--conversation <id>` | Resume the last JSON conversation |
+| `/agy-ox-doctor` | no `-p` | Check `agy --version` and `agy models` |
+| `/agy-ox` / `$agy-ox` | inferred | `plan` unless the user asked to edit files |
 | Reasoning depth | `--effort low\|medium\|high` | Only these three values |
 | Result | `--output-format json` | Agent must check exit code, `status`, `error`, `response` |
 
 `--dangerously-skip-permissions` is **not** on by default. `accept-edits` does not auto-approve `run_command`; shell tools still follow [Permissions](https://antigravity.google/docs/cli/permissions/).
+
+On Windows, long prompts go through a temp file before `-p` so PowerShell quoting cannot split flags out of the task. The Skill has bash, PowerShell, and cmd templates.
 
 Docs used by the Skill:
 
@@ -87,11 +105,17 @@ If the binary is missing, follow [Installation & Auth](https://antigravity.googl
 
 ```text
 .
-├── marketplace.json           # ZCode marketplace catalog (repo root)
+├── marketplace.json                 # ZCode marketplace catalog (repo root)
 └── plugins/agy-ox/
     ├── .zcode-plugin/plugin.json
-    ├── commands/agy-ox.md     # /agy-ox
-    └── skills/agy-ox/SKILL.md # $agy-ox
+    ├── commands/
+    │   ├── agy-ox.md            # /agy-ox
+    │   ├── agy-ox-plan.md       # /agy-ox-plan
+    │   ├── agy-ox-fix.md        # /agy-ox-fix
+    │   ├── agy-ox-ask.md        # /agy-ox-ask
+    │   ├── agy-ox-continue.md   # /agy-ox-continue
+    │   └── agy-ox-doctor.md     # /agy-ox-doctor
+    └── skills/agy-ox/SKILL.md   # $agy-ox
 ```
 
 Skills inside a plugin must stay in this flat `skills/<name>/SKILL.md` layout.

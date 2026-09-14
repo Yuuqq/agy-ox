@@ -1,9 +1,9 @@
 ---
-description: Delegate a task to the local Google Antigravity CLI (agy) in official headless mode.
-argument-hint: "[read-only research/review | implement/fix] task"
+description: Delegate a task to local agy. Infers plan vs accept-edits from the request.
+argument-hint: "task"
 skills: agy-ox
 ---
 
-Use the `agy-ox` skill for this request.
+Use the `agy-ox` skill. Infer `--mode` from the task: read-only → `plan`; implement/fix → `accept-edits`.
 
 $ARGUMENTS

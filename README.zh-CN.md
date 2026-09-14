@@ -12,9 +12,9 @@
 
 <p align="center"><a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a></p>
 
-Marketplace、插件、Skill、斜杠命令全部叫 **agy-ox**。
+Marketplace、插件、Skill 都叫 **agy-ox**。斜杠命令挂在同一个 Skill 上。
 
-ZCode 加载一个 Skill 和一个命令，Agent 直接跑官方 `agy -p`。没有 companion、没有后台任务队列、没有多角色模板。
+ZCode 加载一个 Skill 和一组命令，Agent 直接跑官方 `agy -p`。没有 companion、没有后台任务队列、没有多角色模板。
 
 ![ZCode 对话调用 $agy-ox，再跑官方 agy -p，最后核对 JSON](assets/flow.svg)
 
@@ -40,14 +40,26 @@ Yuuqq/agy-ox
 然后在对话里：
 
 ```text
-$agy-ox 审查当前工作区的 diff
+/agy-ox-plan 审查当前工作区的 diff
 ```
 
 ```text
-/agy-ox 按我们刚说的范围把这个重试 bug 修掉
+/agy-ox-fix 按我们刚说的范围把这个重试 bug 修掉
 ```
 
-输入 `/` 也能在 Skills 分组里找到它。
+```text
+/agy-ox-ask 这个仓库的登录流程是怎么走的？
+```
+
+```text
+/agy-ox-continue 按你刚才的方案改
+```
+
+```text
+/agy-ox-doctor
+```
+
+`$agy-ox` 和 `/agy-ox` 仍是通用入口，会按任务推断 `plan` 还是 `accept-edits`。输入 `/` 也能在 Skills 分组里找到它。
 
 ### 本地目录（不经过 GitHub）
 
@@ -57,14 +69,20 @@ $agy-ox 审查当前工作区的 diff
 
 ![只读用 plan，改文件用 accept-edits](assets/modes.svg)
 
-| 用户意图 | 官方参数 | 说明 |
+| 命令 | 官方参数 | 说明 |
 | --- | --- | --- |
-| 调研、审查、解释、出方案 | `--mode plan` | 只读摸底，先出计划 |
-| 实现 / 修复 / 改文件 | `--mode accept-edits` | 自动批准工作区内写文件 |
+| `/agy-ox-plan` | `--mode plan` | 只读调研或审查 |
+| `/agy-ox-fix` | `--mode accept-edits` | 自动批准工作区内写文件 |
+| `/agy-ox-ask` | `--mode plan --effort low` | 短问答，超时 2 分钟 |
+| `/agy-ox-continue` | `--conversation <id>` | 续上一次 JSON 里的会话 |
+| `/agy-ox-doctor` | 不发 `-p` | 检查 `agy --version` 和 `agy models` |
+| `/agy-ox` / `$agy-ox` | 按任务推断 | 没说要改文件时用 `plan` |
 | 推理强度 | `--effort low\|medium\|high` | 只允许这三个值 |
 | 回收结果 | `--output-format json` | 必须同时检查退出码、`status`、`error`、`response` |
 
 默认**不会**加 `--dangerously-skip-permissions`。`accept-edits` 不会自动放行 `run_command`，shell 仍走 [Permissions](https://antigravity.google/docs/cli/permissions/)。
+
+在 Windows 上，长任务会先写入临时文件再整段交给 `-p`，避免 PowerShell 把任务正文拆成额外参数。Skill 里写了 bash / PowerShell / cmd 模板。
 
 Skill 依据的官方文档：
 
@@ -87,11 +105,17 @@ agy --version
 
 ```text
 .
-├── marketplace.json           # ZCode marketplace 清单（仓库根目录）
+├── marketplace.json                 # ZCode marketplace 清单（仓库根目录）
 └── plugins/agy-ox/
     ├── .zcode-plugin/plugin.json
-    ├── commands/agy-ox.md     # /agy-ox
-    └── skills/agy-ox/SKILL.md # $agy-ox
+    ├── commands/
+    │   ├── agy-ox.md            # /agy-ox
+    │   ├── agy-ox-plan.md       # /agy-ox-plan
+    │   ├── agy-ox-fix.md        # /agy-ox-fix
+    │   ├── agy-ox-ask.md        # /agy-ox-ask
+    │   ├── agy-ox-continue.md   # /agy-ox-continue
+    │   └── agy-ox-doctor.md     # /agy-ox-doctor
+    └── skills/agy-ox/SKILL.md   # $agy-ox
 ```
 
 插件里的 Skill 必须是扁平的 `skills/<name>/SKILL.md`，不能再套一层分组目录。

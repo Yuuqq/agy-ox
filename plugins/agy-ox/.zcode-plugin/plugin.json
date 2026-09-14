@@ -1,7 +1,7 @@
 {
   "name": "agy-ox",
-  "version": "0.1.0",
-  "description": "Delegate tasks to the local Google Antigravity CLI (agy) via official headless mode.",
+  "version": "0.2.0",
+  "description": "Delegate tasks to the local Google Antigravity CLI (agy) via official headless mode. Commands: /agy-ox, /agy-ox-plan, /agy-ox-fix, /agy-ox-ask, /agy-ox-continue, /agy-ox-doctor.",
   "author": {
     "name": "Yuuqq",
     "url": "https://github.com/Yuuqq"
