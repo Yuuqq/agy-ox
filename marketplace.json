@@ -1,0 +1,19 @@
+{
+  "name": "agy-ox",
+  "description": "Hire the local Google Antigravity CLI (agy) as a ZCode headless worker.",
+  "plugins": [
+    {
+      "name": "agy-worker",
+      "source": "./plugins/agy-worker",
+      "version": "0.1.0",
+      "description": "Delegate research, review, and implementation to the local agy CLI using official headless mode.",
+      "category": "developer-tools",
+      "tags": ["agy", "antigravity", "gemini", "headless", "subagent"],
+      "examplePrompts": [
+        "Use agy to review the current working-tree diff",
+        "Have agy implement this scoped fix",
+        "Ask agy to research how authentication works in this repo"
+      ]
+    }
+  ]
+}
