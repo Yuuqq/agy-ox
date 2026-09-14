@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="210" viewBox="0 0 960 210" role="img" aria-label="Four-step ZCode import: open a workspace, add marketplace Yuuqq/agy-ox, install agy-ox, then type $agy-ox">
+  <title>One-click import</title>
+  <rect width="960" height="210" rx="16" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <g font-family="system-ui,Segoe UI,sans-serif">
+    <rect x="20" y="28" width="215" height="154" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <circle cx="48" cy="58" r="14" fill="#0D9488"/>
+    <text x="48" y="63" text-anchor="middle" font-size="14" font-weight="700" fill="#ECFDF5">1</text>
+    <text x="36" y="96" font-size="16" font-weight="700" fill="#0F172A">Open workspace</text>
+    <text x="36" y="122" font-size="13" fill="#64748B">Any project folder</text>
+    <text x="36" y="142" font-size="13" fill="#64748B">in ZCode first</text>
+
+    <rect x="255" y="28" width="215" height="154" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <circle cx="283" cy="58" r="14" fill="#0D9488"/>
+    <text x="283" y="63" text-anchor="middle" font-size="14" font-weight="700" fill="#ECFDF5">2</text>
+    <text x="271" y="96" font-size="16" font-weight="700" fill="#0F172A">Add marketplace</text>
+    <text x="271" y="122" font-size="13" fill="#64748B">Discover -&gt; +</text>
+    <text x="271" y="148" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="13" font-weight="700" fill="#0F766E">Yuuqq/agy-ox</text>
+
+    <rect x="490" y="28" width="215" height="154" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <circle cx="518" cy="58" r="14" fill="#0D9488"/>
+    <text x="518" y="63" text-anchor="middle" font-size="14" font-weight="700" fill="#ECFDF5">3</text>
+    <text x="506" y="96" font-size="16" font-weight="700" fill="#0F172A">Get / Install</text>
+    <text x="506" y="122" font-size="13" fill="#64748B">Plugin: agy-ox</text>
+    <text x="506" y="142" font-size="13" fill="#64748B">Enabled by default</text>
+
+    <rect x="725" y="28" width="215" height="154" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <circle cx="753" cy="58" r="14" fill="#D97706"/>
+    <text x="753" y="63" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFBEB">4</text>
+    <text x="741" y="96" font-size="16" font-weight="700" fill="#0F172A">Type in chat</text>
+    <text x="741" y="128" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="14" font-weight="700" fill="#0F766E">$agy-ox ù</text>
+    <text x="741" y="152" font-size="13" fill="#64748B">or /agy-ox</text>
+  </g>
+</svg>

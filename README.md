@@ -1,12 +1,31 @@
+<p align="center"><img src="assets/logo.svg" width="280" alt="agy-ox"></p>
+
+<p align="center">
+  <a href="README.md">English</a> ·
+  <a href="README.zh-CN.md">简体中文</a>
+</p>
+
+<p align="center">
+  <a href="https://zcode.z.ai/en/docs/plugin"><img src="assets/badges/zcode-plugin.svg" alt="ZCode plugin"></a>
+  <a href="https://antigravity.google/docs/cli/headless/"><img src="assets/badges/agy-headless.svg" alt="agy official headless CLI"></a>
+  <a href="LICENSE"><img src="assets/badges/license-mit.svg" alt="license MIT"></a>
+</p>
+
 # agy-ox
 
-Hire the local [Google Antigravity CLI](https://antigravity.google/docs/cli/using/) (`agy`) as a **ZCode** headless worker. The installed plugin and chat skill stay `$agy-worker`.
+Hire the local [Google Antigravity CLI](https://antigravity.google/docs/cli/using/) (`agy`) as a **ZCode** headless worker.
 
-This is the thin path: ZCode loads one Skill and one slash command, then the Agent runs official `agy -p` print mode. There is no companion process, job queue, or persona stack.
+Marketplace, plugin, skill, and slash command are all named **agy-ox**.
 
-[简体中文](README.zh-CN.md)
+ZCode loads one Skill and one command. The Agent then runs official `agy -p` print mode. There is no companion process, job queue, or persona stack.
+
+![ZCode chat calls $agy-ox, which runs official agy -p, then checks JSON](assets/flow.svg)
+
+**[Install](#one-click-import-in-zcode) · [Modes](#what-it-does) · [Layout](#layout)**
 
 ## One-click import in ZCode
+
+![Four steps: open a workspace, add Yuuqq/agy-ox, install agy-ox, type $agy-ox](assets/install.svg)
 
 ZCode has no standalone skill marketplace. Skills ship as a plugin catalog. This repo **is** that catalog.
 
@@ -19,16 +38,16 @@ Yuuqq/agy-ox
 ```
 
    GitHub URL `https://github.com/Yuuqq/agy-ox` also works.
-4. Under the new **agy-ox** marketplace, click **Get / Install** on the `agy-worker` plugin. Newly installed plugins are enabled by default.
+4. Under the **agy-ox** marketplace, click **Get / Install** on the **agy-ox** plugin. Newly installed plugins are enabled by default.
 
 Then in chat:
 
 ```text
-$agy-worker review the current working-tree diff
+$agy-ox review the current working-tree diff
 ```
 
 ```text
-/agy-worker implement the retry fix we just discussed
+/agy-ox implement the retry fix we just discussed
 ```
 
 Typing `/` also lists the Skill under the Skills group.
@@ -38,6 +57,8 @@ Typing `/` also lists the Skill under the Skills group.
 **Settings → Plugins → Discover → `+`**, choose this cloned directory. ZCode validates `marketplace.json` at the repo root.
 
 ## What it does
+
+![plan for read-only work, accept-edits for file writes](assets/modes.svg)
 
 | User intent | Official flag | Notes |
 | --- | --- | --- |
@@ -69,18 +90,18 @@ If the binary is missing, follow [Installation & Auth](https://antigravity.googl
 
 ```text
 .
-├── marketplace.json              # ZCode marketplace catalog (repo root)
-└── plugins/agy-worker/
+├── marketplace.json           # ZCode marketplace catalog (repo root)
+└── plugins/agy-ox/
     ├── .zcode-plugin/plugin.json
-    ├── commands/agy-worker.md    # /agy-worker
-    └── skills/agy-worker/SKILL.md
+    ├── commands/agy-ox.md     # /agy-ox
+    └── skills/agy-ox/SKILL.md # $agy-ox
 ```
 
 Skills inside a plugin must stay in this flat `skills/<name>/SKILL.md` layout.
 
 ## Not agy-staff
 
-[agy-staff](https://github.com/keli-wen/agy-staff) is a full Claude Code / Codex / Pi plugin with personas, a Node companion, and background jobs. This repo is the ZCode equivalent of a single Codex `agy-worker` Skill: call official `agy -p` and parse JSON.
+[agy-staff](https://github.com/keli-wen/agy-staff) is a full Claude Code / Codex / Pi plugin with personas, a Node companion, and background jobs. **agy-ox** is the thin ZCode path: call official `agy -p` and parse JSON.
 
 ## License
 

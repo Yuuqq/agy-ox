@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="88" viewBox="0 0 520 88" role="img" aria-label="agy-ox">
+  <title>agy-ox</title>
+  <rect width="520" height="88" fill="none"/>
+  <rect x="8" y="10" width="68" height="68" rx="16" fill="#111827"/>
+  <path fill="#F8FAFC" d="M22 48c0-10 8-18 20-18s20 8 20 18v8H22v-8z"/>
+  <path fill="#E8A317" d="M24 32c-6-10-2-16 6-14 4 6 6 10 6 14H24zm36 0c6-10 2-16-6-14-4 6-6 10-6 14h12z"/>
+  <circle cx="36" cy="48" r="3" fill="#111827"/>
+  <circle cx="48" cy="48" r="3" fill="#111827"/>
+  <rect x="28" y="62" width="28" height="8" rx="4" fill="#0D9488"/>
+  <text x="92" y="58" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="42" font-weight="700" fill="#111827">agy-ox</text>
+</svg>

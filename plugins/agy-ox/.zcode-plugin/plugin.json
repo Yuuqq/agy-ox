@@ -1,15 +1,15 @@
 {
-  "name": "agy-worker",
+  "name": "agy-ox",
   "version": "0.1.0",
   "description": "Delegate tasks to the local Google Antigravity CLI (agy) via official headless mode.",
   "author": {
     "name": "Yuuqq",
     "url": "https://github.com/Yuuqq"
   },
-    "homepage": "https://github.com/Yuuqq/agy-ox",
+  "homepage": "https://github.com/Yuuqq/agy-ox",
   "repository": "https://github.com/Yuuqq/agy-ox",
   "license": "MIT",
-  "keywords": ["agy", "antigravity", "gemini", "zcode", "headless"],
+  "keywords": ["agy", "agy-ox", "antigravity", "gemini", "zcode", "headless"],
   "skills": "skills",
   "commands": "commands"
 }

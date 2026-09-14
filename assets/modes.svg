@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="250" viewBox="0 0 960 250" role="img" aria-label="plan mode for read-only work, accept-edits mode for file writes; run_command still follows permissions">
+  <title>Official --mode split</title>
+  <rect width="960" height="250" rx="16" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <rect x="24" y="24" width="446" height="202" rx="14" fill="#FFFFFF" stroke="#99F6E4"/>
+  <text x="48" y="60" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="18" font-weight="700" fill="#0F766E">--mode plan</text>
+  <text x="48" y="96" font-family="system-ui,Segoe UI,sans-serif" font-size="16" font-weight="700" fill="#0F172A">Read-only worker</text>
+  <text x="48" y="128" font-family="system-ui,Segoe UI,sans-serif" font-size="14" fill="#475569">Research · review · explain · outline</text>
+  <text x="48" y="156" font-family="system-ui,Segoe UI,sans-serif" font-size="14" fill="#475569">agy looks around, then writes a plan</text>
+  <text x="48" y="196" font-family="system-ui,Segoe UI,sans-serif" font-size="13" fill="#64748B">Use this unless the user asked to edit files</text>
+
+  <rect x="490" y="24" width="446" height="202" rx="14" fill="#FFFFFF" stroke="#FDE68A"/>
+  <text x="514" y="60" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="18" font-weight="700" fill="#B45309">--mode accept-edits</text>
+  <text x="514" y="96" font-family="system-ui,Segoe UI,sans-serif" font-size="16" font-weight="700" fill="#0F172A">Write files</text>
+  <text x="514" y="128" font-family="system-ui,Segoe UI,sans-serif" font-size="14" fill="#475569">Implement · fix · generate files</text>
+  <text x="514" y="156" font-family="system-ui,Segoe UI,sans-serif" font-size="14" fill="#475569">Workspace writes are auto-approved</text>
+  <text x="514" y="196" font-family="system-ui,Segoe UI,sans-serif" font-size="13" fill="#64748B">run_command still needs Permissions</text>
+</svg>

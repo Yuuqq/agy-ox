@@ -1,9 +1,9 @@
 ---
-name: agy-worker
-description: Delegate a task to the local Google Antigravity CLI (agy) as a headless subagent. Use when the user says $agy-worker, /agy-worker, "have agy do X", "use agy", "delegate to Antigravity/Gemini", wants a second-model review/research, or wants agy to implement or fix code. Do not use for work the current ZCode agent should do itself.
+name: agy-ox
+description: Delegate a task to the local Google Antigravity CLI (agy) as a headless subagent named agy-ox. Use when the user says $agy-ox, /agy-ox, "have agy do X", "use agy-ox", "use agy", "delegate to Antigravity/Gemini", wants a second-model review/research, or wants agy to implement or fix code. Do not use for work the current ZCode agent should do itself.
 ---
 
-# agy-worker
+# agy-ox
 
 Run the machine-local `agy` CLI in official headless print mode. This is a thin Skill, not a native ZCode subagent and not a Codex `agent_role` / `agent_path` worker.
 
